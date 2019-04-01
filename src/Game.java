@@ -6,10 +6,10 @@ class Game {
 	private List<Move> moves;
 	private Machine machine;
 
-	Game(List<Player> players) {
+	Game(List<Player> players,Machine machine) {
 		this.players = players;
 		moves = new ArrayList<>();
-		machine = new Machine();
+		this.machine = machine;
 	}
 
 	List<Integer> makeMove() {
@@ -17,6 +17,6 @@ class Game {
 		for (Player player : players) {
 			moves.add(player.makeMove());
 		}
-		return machine.givePoints(moves, players);
+		return machine.getPoints(moves, players);
 	}
 }

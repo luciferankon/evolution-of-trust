@@ -17,7 +17,7 @@ class Machine {
 		pointsDetails.put(List.of(Move.COOPERATE, Move.CHEAT), List.of(-1, 3));
 	}
 
-	List<Integer> givePoints(List<Move> moves, List<Player> players) {
+	List<Integer> getPoints(List<Move> moves, List<Player> players) {
 		List<Integer> points = pointsDetails.get(moves);
 		players.get(0).setScore(points.get(0));
 		players.get(1).setScore(points.get(1));
